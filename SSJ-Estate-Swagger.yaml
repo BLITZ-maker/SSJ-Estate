@@ -149,7 +149,7 @@ paths:
           description: Tenant successfully deleted
         404:
           description: Tenant not found
-    /tenants/{tenantId}/properties/{propertyId}:
+  /tenants/{tenantId}/properties/{propertyId}:
     put:
       description: Assign a tenant to a property
       parameters:
