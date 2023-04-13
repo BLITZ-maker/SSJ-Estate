@@ -4,20 +4,20 @@ info:
   title: SSJ-Estate API
   description: >-
     A restful web service for property owners to manage their real estate properties, the tenants , rent payment, maintenance expenses and reports.
-  termsOfService: https://SSJ-Estate.com/terms-of-use
+  termsOfService: https://ssj-estate.com/terms-of-use
   contact:
     name: SSJ-Estate Office
-    url: SSJ-Estate.com
-    email: averko@SSJ-Estate.com
+    url: ssj-estate.com
+    email: averko@ssj-estate.com
   license:
     name: SSJ-Estate License
-    url: http://license.SSJ-Estate.com
+    url: http://license.ssj-estate.com
     
   servers:
-    - url: https//dev.SSJ-Estate.com/v1
+    - url: https//dev.ssj-estate.com/v1
       description: Dev Server
       
-    - url: https://prod.SSJ-Estate.com/v1
+    - url: https://prod.ssj-estate.com/v1
       description: Prod Server
       
 paths:
