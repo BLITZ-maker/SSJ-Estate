@@ -51,7 +51,7 @@ paths:
           required: true
           schema:
             type: integer
-      requestBodyS:
+      requestBody:
         required: true
         content:
           application/json:
