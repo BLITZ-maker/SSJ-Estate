@@ -51,7 +51,7 @@ paths:
           required: true
           schema:
             type: integer
-      requestBody:
+      requestBodyS:
         required: true
         content:
           application/json:
@@ -170,84 +170,3 @@ paths:
           description: Tenant successfully assigned to property
         404:
           description: Tenant or property not found
-  /rents/{rentId}:
-    put:
-      description: Record a rent payment
-      parameters:
-        - in: path
-          name: rentId
-          description: ID of the rent payment
-          required: true
-          schema:
-            type: string
-      requestBody:
-        description: Details of the rent payment
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RentPayment'
-      responses:
-        200:
-          description: Rent payment successfully recorded
-        400:
-          description: Invalid request body
-        404:
-          description: Rent payment not found
-  /invoices:
-    get:
-      description: Generate a rent invoice
-      parameters:
-        - in: query
-          name: tenantId
-          description: ID of the tenant to generate the invoice for
-          required: true
-          schema:
-            type: string
-        - in: query
-          name: propertyId
-          description: ID of the property the tenant is associated with
-          required: true
-          schema:
-            type: string
-      responses:
-        200:
-          description: Rent invoice successfully generated
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RentInvoice'
-        404:
-          description: Tenant or property not found
-  /reports:
-    get:
-      summary: Generate reports on properties, tenants, rent collections, and expenses
-      description: Endpoint to retrieve reports on properties, tenants, rent collections, and expenses
-      parameters:
-        - name: type
-          in: query
-          description: Type of report to generate (properties, tenants, rent collections, expenses)
-          required: true
-          enum: [properties, tenants, rent collections, expenses]
-        - name: start_date
-          in: query
-          description: Start date for the report period
-          required: false
-          type: string
-        - name: end_date
-          in: query
-          description: End date for the report period
-          required: false
-          type: string
-      responses:
-        200:
-          description: Report data
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    type: array
-                    items:
-                      type: object
