@@ -13,12 +13,12 @@ info:
     name: SSJ-Estate License
     url: http://license.ssj-estate.com
     
-  servers:
-    - url: https//dev.ssj-estate.com/v1
-      description: Dev Server
-      
-    - url: https://prod.ssj-estate.com/v1
-      description: Prod Server
+servers:
+  - url: https//dev.ssj-estate.com/v1
+    description: Dev Server
+
+  - url: https://prod.ssj-estate.com/v1
+    description: Prod Server
       
 paths:
   /properties:
@@ -42,10 +42,11 @@ paths:
           description: Property added successfully
         400:
           description: Bad request
+  /properties/{propertyId}:
     put:
       summary: Edit an existing property in the portfolio
       parameters:
-        - name: property_id
+        - name: propertyId
           in: path
           description: ID of the property to edit
           required: true
@@ -74,7 +75,7 @@ paths:
     delete:
       summary: Delete a property from the portfolio
       parameters:
-        - name: property_id
+        - name: propertyId
           in: path
           description: ID of the property to delete
           required: true
@@ -98,7 +99,7 @@ paths:
                 name:
                   type: string
                   description: Name of the tenant
-                property_id:
+                propertyId:
                   type: integer
                   description: ID of the property to assign the tenant to
       responses:
@@ -106,10 +107,11 @@ paths:
           description: Tenant added successfully
         400:
           description: Bad request
+  /tenants/{tenantId}:
     put:
       summary: Edit an existing tenant
       parameters:
-        - name: tenant_id
+        - name: tenantId
           in: path
           description: ID of the tenant to edit
           required: true
@@ -125,7 +127,7 @@ paths:
                 name:
                   type: string
                   description: Name of the tenant
-                property_id:
+                propertyId:
                   type: integer
                   description: ID of the property to assign the tenant to
       responses:
@@ -138,7 +140,7 @@ paths:
     delete:
       description: Delete a tenant
       parameters:
-        - name: tenant_id
+        - name: tenantId
           in: path
           description: ID of the tenant to delete
           required: true
