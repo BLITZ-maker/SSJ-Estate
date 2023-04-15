@@ -21,7 +21,3 @@ A restful web service for property owners to manage their real estate properties
 - Edit the details of my tenants
 - Delete tenants from my properties
 - Assign tenants to my properties
-- Keep track of rent payments and generate rent invoices
-- Manage rent collections and generate rent statements
-- Manage maintenance expenses for my properties
-- Generate reports on my properties, tenants, rent collections, and expenses
