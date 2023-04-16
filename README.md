@@ -6,9 +6,6 @@ A restful web service for property owners to manage their real estate properties
 
 - Manage Properties: Add, edit, and delete properties
 - Tenant Management: Add, edit, and delete tenants, assign tenants to properties, and manage lease agreements
-- Rent Management: Keep track of rent payments, generate rent invoices and statements, and manage rent collections
-- Maintenance Management: Create and track maintenance requests, and manage maintenance expenses
-- Reporting: Generate reports on properties, tenants, rent collections, and expenses
 
 ## User Stories
 
