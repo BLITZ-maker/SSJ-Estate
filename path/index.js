@@ -1,4 +1,4 @@
-import Log from "../../logic/log.js";
+import winston from 'winston'
 
 export default function () {
 	const operations = {
@@ -7,62 +7,68 @@ export default function () {
 		PUT,
 		DELETE,
 	};
+	const logger = winston.createLogger({
+		transports: [
+		new winston.transports.Console(),
+		new winston.transports.File({ filename: 'logfile.log' })
+		]
+	});
 
 	function POST(req, res) {
-		Log.i(`About to create property: ${JSON.stringify(req.body)}`);
+		Logger.info(`About to create property: ${JSON.stringify(req.body)}`);
 		// Add logic to create a new property in the portfolio
 		res.status(201).send();
 	}
 	function PUT(req, res) {
-		Log.i(`About to update property id: ${req.query.id}`);
+		Logger.info(`About to update property id: ${req.query.id}`);
 		// Add logic to update the details of a property in the portfolio
 		res.status(200).send();
 	}
 	
 	function DELETE(req, res) {
-		Log.i(`About to delete property id: ${req.query.id}`);
+		Logger.info(`About to delete property id: ${req.query.id}`);
 		// Add logic to delete a property from the portfolio
 		res.status(200).send();
 	}
 	
 	function POST(req, res) {
-		Log.i(`About to add tenant to property id: ${req.query.id}`);
+		Logger.info(`About to add tenant to property id: ${req.query.id}`);
 		// Add logic to add a tenant to a property in the portfolio
 		res.status(201).send();
 	}
 	
 	function PUT(req, res) {
-		Log.i(`About to update tenant id: ${req.query.id}`);
+		Logger.info(`About to update tenant id: ${req.query.id}`);
 		// Add logic to update the details of a tenant in a property in the portfolio
 		res.status(200).send();
 	}
 	
 	function DELETE(req, res) {
-		Log.i(`About to delete tenant id: ${req.query.id}`);
+		Logger.info(`About to delete tenant id: ${req.query.id}`);
 		// Add logic to delete a tenant from a property in the portfolio
 		res.status(200).send();
 	}
 
 	function POST(req, res) {
-		Log.i(`About to assign tenant to property id: ${req.query.id}`);
+		Logger.info(`About to assign tenant to property id: ${req.query.id}`);
 		// Add logic to assign a tenant to a property in the portfolio
 		res.status(201).send();
 	}
 
 	function POST(req, res) {
-		Log.i(`About to record rent payment for tenant id: ${req.query.id}`);
+		Logger.info(`About to record rent payment for tenant id: ${req.query.id}`);
 		// Add logic to record rent payment and generate rent invoices
 		res.status(201).send();
 	}
 
 	function GET(req, res) {
-		Log.i(`Fetching rent statements for property id: ${req.query.id}`);
+		Logger.info(`Fetching rent statements for property id: ${req.query.id}`);
 		// Add logic to fetch rent statements for a property
 		res.status(200).json(/* rent statements data */);
 	}
 
 	function POST(req, res) {
-		Log.i(`About to record maintenance expense for property id: ${req.query.id}`);
+		Logger.info(`About to record maintenance expense for property id: ${req.query.id}`);
 		// Add logic to record maintenance expense for a property
 		res.status(201).send();
 	}
